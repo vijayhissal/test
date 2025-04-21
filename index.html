@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vijay Hissal - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+         <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li>
+            <a href="#skills">Skills</a>
+            <ul class="dropdown">
+                <li><a href="#html">HTML</a></li>
+                <li><a href="#css">CSS</a></li>
+                <li><a href="#javascript">JavaScript</a></li>
+            </ul>
+        </li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+    </header>
+
+    <!-- Home Section -->
+<section id="home">
+    <img src="vijay.jpg" alt="Vijay Hissal" class="profile-image">
+    <h1>Vijay Hissal</h1>
+    <p>Welcome to My Personal Portfolio Website.</p>
+</section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p style="font-size: 20px;">Hi, I'm Vijay Hissal, a passionate and results-oriented software developer with a strong foundation in various programming languages. I possess a solid understanding of C, C++, Python, Java, HTML, CSS, PHP, and JavaScript, enabling me to develop robust and efficient software solutions.
+
+        I am eager to contribute my skills and enthusiasm to a dynamic team and work on challenging projects that push the boundaries of technology. I am a quick learner and possess excellent problem-solving and analytical skills.
+
+        I am always striving to improve my knowledge and stay updated with the latest industry trends. I am confident that my skills and dedication will make me a valuable asset to any organization.</p>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>Java</li>
+            <li>Python</li>
+        </ul>
+    </section>
+
+ <!-- Blog Section -->
+<section id="blog">
+    <h2>Blog</h2>
+    <div class="blog-posts">
+        <!-- Blog 1: Visiting Delhi -->
+        <article>
+            <h3>Delhi</h3>
+            <img src="indiagate.jpeg" alt="Delhi Tourist Places" class="blog-image">
+            <p>
+                Delhi, the capital of India, is a city rich in history and culture. During my visit, I explored some of the most iconic tourist places, including:
+            </p>
+            <ul>
+                <li><strong>Red Fort:</strong> A historic fort built by Mughal Emperor Shah Jahan.</li>
+                <li><strong>India Gate:</strong> A war memorial dedicated to Indian soldiers.</li>
+                <li><strong>Qutub Minar:</strong> A UNESCO World Heritage Site and the tallest brick minaret in the world.</li>
+                <li><strong>Lotus Temple:</strong> A stunning Bahá'í House of Worship shaped like a lotus flower.</li>
+            </ul>
+            <p>
+                Delhi is a city that beautifully blends the old and the new, offering a unique experience to every visitor.
+            </p>
+        </article>
+
+        <!-- Blog 2: Attending the 6th Technovation Hackathon -->
+        <article>
+            <h3>6th Technovation Hackathon</h3>
+            <img src="shardauniversity.jpeg" alt="Technovation Hackathon" class="blog-image">
+            <p>
+                I had the opportunity to attend the 6th Technovation Hackathon held at Sharda University, Noida. This event brought together some of the brightest minds in technology to solve real-world problems through innovation.
+            </p>
+            <p>
+                <strong>Highlights of the Hackathon:</strong>
+            </p>
+            <ul>
+                <li>Participated in a 24-hour coding marathon.</li>
+                <li>Collaborated with a team to develop a prototype for an autonomous fire controller car.</li>
+                <li>Attended workshops on AI, IoT, and blockchain technology.</li>
+                <li>Networked with industry experts and fellow developers.</li>
+            </ul>
+            <p>
+                The hackathon was an incredible learning experience, and I am proud to have been a part of it.
+            </p>
+        </article>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects">
+    <h2>Projects</h2>
+    <div class="project-cards">
+        <!-- Smart Dustbin Card -->
+        <div class="card" onclick="showProjectDetails('smart-dustbin')">
+            <img src="smartdustbin.png" alt="Smart Dustbin">
+            <h3>Smart Dustbin</h3>
+            <p>An IoT-based automated dustbin.</p>
+        </div>
+
+        <!-- Autonomous Fire Controller Car Card -->
+        <div class="card" onclick="showProjectDetails('fire-controller-car')">
+            <img src="sparkshield2.png" alt="Autonomous Fire Controller Car">
+            <h3>Autonomous Fire Controller Car</h3>
+            <p>A car designed to detect and extinguish fires.</p>
+        </div>
+    </div>
+
+    <!-- Project Details Modal -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modal-content">
+                <!-- Content will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+</section>
+
+    <script>
+    // Function to show project details in the modal
+    function showProjectDetails(projectId) {
+        const modal = document.getElementById('project-modal');
+        const modalContent = document.getElementById('modal-content');
+
+        // Clear previous content
+        modalContent.innerHTML = '';
+
+        // Add content based on the project clicked
+        if (projectId === 'smart-dustbin') {
+            modalContent.innerHTML = `
+                <h3>Smart Dustbin</h3>
+                <img src="images/smart-dustbin.jpg" alt="Smart Dustbin">
+                <p>
+                    The Smart Dustbin is an IoT-based project that automatically opens the lid when it detects a person nearby. It uses ultrasonic sensors and a servo motor for automation.
+                </p>
+                <video controls>
+                    <source src="videos/smart-dustbin.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            `;
+        } else if (projectId === 'fire-controller-car') {
+            modalContent.innerHTML = `
+                <h3>Autonomous Fire Controller Car - SparkShield</h3>
+               <center>
+                <img src="hackathon.jpeg" alt="Autonomous Fire Controller Car " width="10px">
+                </center>
+                <p>
+                    The Autonomous Fire Controller Car is designed to detect and extinguish fires in Forest. SparkShield is developed as a smart fire tracking and control system that combines
+                    real-time fire detection, GPS-based tracking, automated response, and remote communication for effective fire
+                    management. Unlike conventional fire alarms, SparkShield is designed to actively monitor, detect, track, and
+                    mitigate fire incidents with minimal human intervention.
+                </p>
+                <center>
+                <video controls id="xyz">
+                    <source src="sparkshield.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                </center>
+            `;
+        }
+
+        // Show the modal
+        modal.style.display = 'flex';
+    }
+
+    // Function to close the modal
+    function closeModal() {
+        const modal = document.getElementById('project-modal');
+        modal.style.display = 'none';
+    }
+
+    // Close modal when clicking outside the modal content
+    window.onclick = function (event) {
+        const modal = document.getElementById('project-modal');
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    };
+</script>
+</br></br>
+    <footer>
+        <p>&copy; 2025 Vijay Hissal. All rights reserved.</p>
+    </footer>
+</body>
+</html>
